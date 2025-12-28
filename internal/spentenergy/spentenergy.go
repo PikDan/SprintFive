@@ -44,12 +44,12 @@ func MeanSpeed(steps int, height float64, duration time.Duration) float64 {
 // калории при беге.
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
-		return 0, errors.New("invalid input data")
+		return 0, errors.New("неверный формат данных")
 	}
 
 	meanSpeed := MeanSpeed(steps, height, duration)
 	if meanSpeed <= 0 {
-		return 0, errors.New("invalid mean speed")
+		return 0, errors.New("неверная скорость")
 	}
 
 	durationMinutes := duration.Minutes()
@@ -61,12 +61,12 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 // калории при ходьбе.
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 || weight <= 0 || height <= 0 || duration <= 0 {
-		return 0, errors.New("invalid input data")
+		return 0, errors.New("неверный формат данных")
 	}
 
 	meanSpeed := MeanSpeed(steps, height, duration)
 	if meanSpeed <= 0 {
-		return 0, errors.New("invalid mean speed")
+		return 0, errors.New("неверная скорость")
 	}
 
 	durationMinutes := duration.Minutes()

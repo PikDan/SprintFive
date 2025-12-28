@@ -19,7 +19,6 @@ func Info(dataset []string, dp DataParser) {
 			log.Println("ошибка формирования данных:", err)
 			continue
 		}
-
 		log.Println(info)
 	}
 }
